@@ -10,7 +10,10 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { LogOutIcon, SettingsIcon, UserIcon } from "./icons";
+
+import LogoutIcon from '@mui/icons-material/Logout';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 export function UserInfo() {
   const [isOpen, setIsOpen] = useState(false);
@@ -83,7 +86,7 @@ export function UserInfo() {
             onClick={() => setIsOpen(false)}
             className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-[9px] hover:bg-gray-2 hover:text-dark dark:hover:bg-dark-3 dark:hover:text-white"
           >
-            <UserIcon />
+            <AccountCircleIcon />
 
             <span className="mr-auto text-base font-medium">View profile</span>
           </Link>
@@ -108,7 +111,7 @@ export function UserInfo() {
             className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-[9px] hover:bg-gray-2 hover:text-dark dark:hover:bg-dark-3 dark:hover:text-white"
             onClick={() => setIsOpen(false)}
           >
-            <LogOutIcon />
+            <LogoutIcon />
 
             <span className="text-base font-medium">Log out</span>
           </button>

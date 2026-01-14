@@ -1,16 +1,18 @@
 import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { Moon, Sun } from "./icons";
+
+import SunnyIcon from '@mui/icons-material/Sunny';
+import BedtimeIcon from '@mui/icons-material/Bedtime';
 
 const THEMES = [
   {
     name: "light",
-    Icon: Sun,
+    Icon: SunnyIcon,
   },
   {
     name: "dark",
-    Icon: Moon,
+    Icon: BedtimeIcon,
   },
 ];
 
