@@ -6,9 +6,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { NAV_DATA } from "./data";
-import { ArrowLeftIcon, ChevronUp } from "./icons";
 import { MenuItem } from "./menu-item";
 import { useSidebarContext } from "./sidebar-context";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -80,7 +81,7 @@ export function Sidebar() {
               >
                 <span className="sr-only">Close Menu</span>
 
-                <ArrowLeftIcon className="ml-auto size-7" />
+                <ArrowBackIosIcon className="ml-auto size-7" />
               </button>
             )}
           </div>
@@ -112,7 +113,7 @@ export function Sidebar() {
 
                               <span>{item.title}</span>
 
-                              <ChevronUp
+                              <KeyboardArrowUpIcon
                                 className={cn(
                                   "ml-auto rotate-180 transition-transform duration-200",
                                   expandedItems.includes(item.title) &&

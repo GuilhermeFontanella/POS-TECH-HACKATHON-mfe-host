@@ -5,12 +5,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSidebarContext } from "../sidebar/sidebar-context";
 import { MenuIcon } from "./icons";
-import { Notification } from "./notification";
 import { ThemeToggleSwitch } from "./theme-toggle";
 import { UserInfo } from "./user-info";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const { toggleSidebar, isMobile } = useSidebarContext();
+  const [pageHeaderData, setPageHeaderData] = useState({title: 'Página inicial', subtitle: 'Subtitulo genérico'});
+
+  useEffect(() => {
+    const handleTitle = (event: any) => setPageHeaderData(event);
+    window.addEventListener('setPageHeaderData', handleTitle);
+
+    return () => window.removeEventListener('setPageHeaderData', handleTitle);
+  }, []);
 
   return (
     <header className="sticky top-0 z-30 flex items-center justify-between border-b border-stroke bg-white px-4 py-5 shadow-1 dark:border-stroke-dark dark:bg-gray-dark md:px-5 2xl:px-10">
@@ -36,9 +44,9 @@ export function Header() {
 
       <div className="max-xl:hidden">
         <h1 className="mb-0.5 text-heading-5 font-bold text-dark dark:text-white">
-          Dashboard
+          {pageHeaderData.title}
         </h1>
-        <p className="font-medium">Next.js Admin Dashboard Solution</p>
+        <p className="font-medium">{pageHeaderData.subtitle}</p>
       </div>
 
       <div className="flex flex-1 items-center justify-end gap-2 min-[375px]:gap-4">
@@ -53,8 +61,6 @@ export function Header() {
         </div>
 
         <ThemeToggleSwitch />
-
-        <Notification />
 
         <div className="shrink-0">
           <UserInfo />
