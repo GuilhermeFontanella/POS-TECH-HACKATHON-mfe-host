@@ -1,23 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { AppConfig } from 'src/app/shared/models/app-config.model';
+import { LayoutState } from 'src/app/shared/models/layout-state.model';
 
-export interface AppConfig {
-    inputStyle: string;
-    colorScheme: string;
-    theme: string;
-    ripple: boolean;
-    menuMode: string;
-    scale: number;
-}
-
-interface LayoutState {
-    staticMenuDesktopInactive: boolean;
-    overlayMenuActive: boolean;
-    profileSidebarVisible: boolean;
-    configSidebarVisible: boolean;
-    staticMenuMobileActive: boolean;
-    menuHoverActive: boolean;
-}
 
 @Injectable({
     providedIn: 'root',

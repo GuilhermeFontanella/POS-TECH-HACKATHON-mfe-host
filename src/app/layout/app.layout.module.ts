@@ -10,7 +10,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { RippleModule } from 'primeng/ripple';
 import { AppMenuComponent } from './menu/app.menu.component';
-import { AppMenuitemComponent } from './menu/app.menuitem.component';
+import { AppMenuitemComponent } from './menu/menu-item/app.menuitem.component';
 import { RouterModule } from '@angular/router';
 import { AppTopBarComponent } from './topbar/app.topbar.component';
 import { AppConfigModule } from './config/config.module';
