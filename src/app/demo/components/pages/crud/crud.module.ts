@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CrudRoutingModule } from './crud-routing.module';
@@ -16,6 +16,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { DialogModule } from 'primeng/dialog';
+import { C } from 'react-router/dist/development/index-react-server-client-BSxMvS7Z';
 
 @NgModule({
     imports: [
@@ -36,6 +37,7 @@ import { DialogModule } from 'primeng/dialog';
         InputNumberModule,
         DialogModule
     ],
-    declarations: [CrudComponent]
+    declarations: [CrudComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CrudModule { }

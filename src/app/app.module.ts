@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -65,5 +65,6 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
         }
     ],
     bootstrap: [AppComponent],
+    //schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
