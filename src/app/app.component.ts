@@ -1,27 +1,9 @@
-/*
-import { Component } from '@angular/core';
-import { PrimeNGConfig } from 'primeng/api';
-@Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html'
-})
-export class AppComponent {
-
-    menuMode = 'static';
-
-    constructor(private primengConfig: PrimeNGConfig) { }
-
-    ngOnInit() {
-        this.primengConfig.ripple = true;
-        document.documentElement.style.fontSize = '14px';
-    }
-}
-*/
-
-
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { LayoutService } from './layout/service/app.layout.service';
+import { PomodoroService } from './demo/service/pomodoro.service';
+import { TimerService } from './demo/core/services/timer.service';
+import { take } from 'rxjs';
 
 @Component({
     selector: 'app-root',
@@ -29,9 +11,15 @@ import { LayoutService } from './layout/service/app.layout.service';
 })
 export class AppComponent implements OnInit {
 
-    constructor(private primengConfig: PrimeNGConfig, private layoutService: LayoutService) { }
+    constructor(
+        private primengConfig: PrimeNGConfig, 
+        private layoutService: LayoutService,
+        private pomodoroService: PomodoroService,
+        private timerService: TimerService
+    ) { }
 
     ngOnInit(): void {
+        this.setPomodoroValues();
         this.primengConfig.ripple = true;       //enables core ripple functionality
 		document.documentElement.style.fontSize = '14px';
 		
@@ -46,6 +34,19 @@ export class AppComponent implements OnInit {
 			
             scale: 14                           //size of the body font size to scale the whole application
         };
+    }
+
+    private setPomodoroValues() {
+        this.pomodoroService.getSettings()
+            .pipe(take(1))
+            .subscribe((settings: any) => {
+                console.log(settings)
+            if (!settings) return;
+
+            this.timerService.setFocusTime(settings?.focusTime);
+            this.timerService.setPauseTime(settings?.pauseTime);
+
+        });
     }
 
 }

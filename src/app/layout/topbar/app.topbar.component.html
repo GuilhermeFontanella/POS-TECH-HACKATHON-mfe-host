@@ -18,22 +18,7 @@
                 <h4 class="mb-0">Pomodoro</h4>
                 <button pTooltip="Configurar Pomodoro" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-text mr-2" icon="pi pi-cog" [routerLink]="'/pages/pomodoro'"></button>
             </div>
-            <div class="mb-4">
-                <span>Tempo de foco:</span>
-                <div class="flex flex-row justify-content-between align-items-center w-15rem gap-3 bg-green-200 border-round-md mt-2">
-                    <button pTooltip="Iniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-text ml-2" icon="pi pi-play"></button>
-                    <h5>10:39</h5>
-                    <button pTooltip="Reiniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-text mr-2" icon="pi pi-replay"></button>
-                </div>
-            </div>
-            <div>
-                <span>Tempo de pausa:</span>
-                <div class="flex flex-row justify-content-between align-items-center w-15rem gap-3 bg-orange-200 border-round-md mt-2">
-                    <button pTooltip="Iniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-text ml-2" icon="pi pi-play"></button>
-                    <h5>10:39</h5>
-                    <button pTooltip="Reiniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-text mr-2" icon="pi pi-replay"></button>
-                </div>
-            </div>
+            <app-pomodoro-display></app-pomodoro-display>
         </p-overlayPanel>
         <button (click)="op.toggle($event)" class="p-link layout-topbar-button">
             <i class="pi pi-clock"></i>

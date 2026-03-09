@@ -2,7 +2,6 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NotfoundComponent } from './demo/components/notfound/notfound.component';
 import { AppLayoutComponent } from './layout/app.layout.component';
-import { MydashboardComponent } from './demo/components/mydashboard/mydashboard.component';
 import { authGuard } from './interceptors/auth-guard.interceptor';
 
 @NgModule({
@@ -27,11 +26,7 @@ import { authGuard } from './interceptors/auth-guard.interceptor';
                                 import(
                                     './demo/components/pages/pages.module'
                                 ).then((m) => m.PagesModule),
-                        },
-                        {
-                            path: 'mydashboard',
-                            component: MydashboardComponent,
-                        },
+                        }
                     ],
                 },
                 { path: 'pages/notfound', component: NotfoundComponent },

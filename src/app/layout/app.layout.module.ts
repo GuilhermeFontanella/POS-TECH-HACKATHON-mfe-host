@@ -22,6 +22,7 @@ import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { ToastModule } from 'primeng/toast';
+import { PomodoroDisplayModule } from '../demo/components/pomodoro-display/pomodoro-display.module';
 
 @NgModule({
     declarations: [
@@ -49,7 +50,8 @@ import { ToastModule } from 'primeng/toast';
         ButtonModule,
         TooltipModule,
         ProgressBarModule,
-        ToastModule
+        ToastModule,
+        PomodoroDisplayModule
     ],
     exports: [AppLayoutComponent]
 })

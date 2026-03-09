@@ -1,0 +1,16 @@
+<div class="mb-4">
+    <span class="font-bold">Tempo de foco:</span>
+    <div class="flex flex-row justify-content-between align-items-center w-15rem gap-3 bg-indigo-100 border-round-md mt-2">
+        <button [disabled]="isDisabledStartFocusButton" (click)="startFocusTime()" pTooltip="Iniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-primary ml-2" icon="pi pi-play"></button>
+        <h5>{{ format(focusRemaining$ | async) ?? '00:00' }}</h5>
+        <button (click)="resetFocusTime()" pTooltip="Reiniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-danger mr-2" icon="pi pi-replay"></button>
+    </div>
+</div>
+<div>
+    <span class="font-bold">Tempo de pausa:</span>
+    <div class="flex flex-row justify-content-between align-items-center w-15rem gap-3 bg-gray-300 border-round-md mt-2">
+        <button [disabled]="idDisabledStartPauseButton" (click)="startPauseTime()" pTooltip="Iniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-primary ml-2" icon="pi pi-play"></button>
+        <h5>{{ format(pauseRemaining$ | async) ?? '00:00' }}</h5>
+        <button (click)="resetPauseTime()" pTooltip="Reiniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-danger mr-2" icon="pi pi-replay"></button>
+    </div>
+</div>

@@ -13,7 +13,6 @@ import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 
 //New TODO mydasboard
-import { MydashboardComponent } from './demo/components/mydashboard/mydashboard.component';
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
@@ -29,9 +28,13 @@ import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from 'src/environments/environment';
+import { PomodoroService } from './demo/service/pomodoro.service';
 
 @NgModule({
-    declarations: [AppComponent, NotfoundComponent, MydashboardComponent],
+    declarations: [AppComponent, NotfoundComponent],
     imports: [
         AppRoutingModule,
         AppLayoutModule,
@@ -48,6 +51,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
         ProgressBarModule,
         ToastModule,
         FormsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule
     ],
     providers: [
         { provide: LocationStrategy, useClass: HashLocationStrategy },
