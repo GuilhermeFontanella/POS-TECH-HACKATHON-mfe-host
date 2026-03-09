@@ -1,0 +1,32 @@
+.container {
+      max-width: 100%;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      font-size: 18px;
+    }
+
+    h1 {
+      color: #d64545;
+      margin-top: 0;
+    }
+
+    p {
+      color: #333;
+      font-size: 16px;
+    }
+
+    .highlight {
+      background: #fff3f3;
+      border-left: 4px solid #d64545;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 6px;
+      margin: 16px 0px;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #777;
+    }

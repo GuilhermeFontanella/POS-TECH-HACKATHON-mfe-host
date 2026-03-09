@@ -17,6 +17,11 @@ import { AppConfigModule } from './config/config.module';
 import { AppLayoutComponent } from "./app.layout.component";
 import { AppFooterComponent } from './footer/app.footer.component';
 import { AppSidebarComponent } from './sidebar/app.sidebar.component';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { ButtonModule } from 'primeng/button';
+import { TooltipModule } from 'primeng/tooltip';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
     declarations: [
@@ -39,7 +44,12 @@ import { AppSidebarComponent } from './sidebar/app.sidebar.component';
         InputSwitchModule,
         RippleModule,
         RouterModule,
-        AppConfigModule
+        AppConfigModule,
+        OverlayPanelModule,
+        ButtonModule,
+        TooltipModule,
+        ProgressBarModule,
+        ToastModule
     ],
     exports: [AppLayoutComponent]
 })

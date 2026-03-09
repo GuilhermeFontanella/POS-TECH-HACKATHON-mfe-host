@@ -6,8 +6,7 @@ module.exports = withModuleFederation({
 
     remotes: {
         "mfe-settings": "http://localhost:4173/assets/remoteEntry.js",
-        // Adicione seus remotes aqui
-        // "mfe1": "http://localhost:3000/remoteEntry.js",
+        "mfe-tasks": "http://localhost:4174/assets/remoteEntry.js",
     },
 
     shared: {

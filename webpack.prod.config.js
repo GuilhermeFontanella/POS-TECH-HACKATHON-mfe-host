@@ -3,6 +3,7 @@ const { shareAll, withModuleFederation } = require('@angular-architects/module-f
 module.exports = withModuleFederation({
     remotes: {
         "mfe-settings": "http://localhost:3001/remoteEntry.js",
+        "mfe-tasks": "http://localhost:3001/remoteEntry.js",
         // Adicione seus remotes aqui
         // "mfe1": "http://localhost:3000/remoteEntry.js",
     },

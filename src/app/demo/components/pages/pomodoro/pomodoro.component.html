@@ -1,0 +1,60 @@
+<p-accordion [activeIndex]="0">
+    <p-accordionTab header="🍅 Técnica Pomodoro" [style]="{fontSize: '30px'}">
+        <div class="container">
+            <p>
+                A <strong>Técnica Pomodoro</strong> é um método de gerenciamento de tempo desenvolvido
+                por <strong>Francesco Cirillo</strong> no final dos anos 1980.
+            </p>
+
+            <p>
+                A técnica consiste na utilização de um cronômetro para dividir o trabalho em
+                períodos de <strong>25 minutos</strong>, chamados de <em>pomodoros</em>, separados
+                por breves intervalos de descanso.
+            </p>
+
+            <div class="highlight">
+                A ideia central do método é que pausas frequentes ajudam a manter a mente
+                mais focada, produtiva e ágil durante o trabalho ou estudo.
+            </div>
+
+            <p>
+                O nome da técnica vem da palavra italiana <em>pomodoro</em> (tomate), uma
+                referência ao popular cronômetro de cozinha em formato de tomate usado
+                por Cirillo quando criou o método.
+            </p>
+            <p-divider></p-divider>
+            <footer>
+                Fonte: Técnica Pomodoro
+            </footer>
+        </div>
+    </p-accordionTab>
+</p-accordion>
+
+<div class="flex flex-row gap-4 mt-4">
+    <div class="flex flex-column gap-2">
+        <label for="username">Pausa em minutos</label>
+        <p-inputNumber 
+            inputId="integeronly" 
+            [(ngModel)]="interval"
+            [showButtons]="true"
+            (ngModelChange)="onValueChange()">
+        </p-inputNumber>
+        <small id="username-help">
+            Defina as pausas entre as tarefas
+        </small>
+    </div>
+    <div class="flex flex-column gap-2">
+        <label for="username">Tempo de foco</label>
+        <p-inputNumber 
+            inputId="integeronly" 
+            [(ngModel)]="focusTime"
+            [showButtons]="true"
+            (ngModelChange)="onValueChange()">
+        </p-inputNumber>
+        <small id="username-help">
+            Defina o tempo máximo de foco
+        </small>
+    </div>
+
+</div>
+<p-toast></p-toast>

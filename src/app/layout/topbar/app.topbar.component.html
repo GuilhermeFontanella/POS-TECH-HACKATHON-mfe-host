@@ -1,7 +1,7 @@
 <div class="layout-topbar">
     <a class="layout-topbar-logo" routerLink="">
-        <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="logo">
-        <span>SAKAI</span>
+        <img src="assets/layout/images/logo.png" alt="logo">
+        <span>NEUROFLOW</span>
     </a>
 
     <button #menubutton class="p-link layout-menu-button layout-topbar-button" (click)="layoutService.onMenuToggle()">
@@ -13,15 +13,43 @@
     </button>
 
     <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
-        <button class="p-link layout-topbar-button">
-            <i class="pi pi-calendar"></i>
-            <span>Calendar</span>
+        <p-overlayPanel #op>
+            <div class="flex flex-row justify-content-between align-items-center w-15rem gap-3 mb-3">
+                <h4 class="mb-0">Pomodoro</h4>
+                <button pTooltip="Configurar Pomodoro" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-text mr-2" icon="pi pi-cog" [routerLink]="'/pages/pomodoro'"></button>
+            </div>
+            <div class="mb-4">
+                <span>Tempo de foco:</span>
+                <div class="flex flex-row justify-content-between align-items-center w-15rem gap-3 bg-green-200 border-round-md mt-2">
+                    <button pTooltip="Iniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-text ml-2" icon="pi pi-play"></button>
+                    <h5>10:39</h5>
+                    <button pTooltip="Reiniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-text mr-2" icon="pi pi-replay"></button>
+                </div>
+            </div>
+            <div>
+                <span>Tempo de pausa:</span>
+                <div class="flex flex-row justify-content-between align-items-center w-15rem gap-3 bg-orange-200 border-round-md mt-2">
+                    <button pTooltip="Iniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-text ml-2" icon="pi pi-play"></button>
+                    <h5>10:39</h5>
+                    <button pTooltip="Reiniciar contador" tooltipPosition="bottom" [showDelay]="500" pButton class="p-button-text mr-2" icon="pi pi-replay"></button>
+                </div>
+            </div>
+        </p-overlayPanel>
+        <button (click)="op.toggle($event)" class="p-link layout-topbar-button">
+            <i class="pi pi-clock"></i>
+            <span>Pomodoro</span>
         </button>
-        <button class="p-link layout-topbar-button">
+        <p-overlayPanel #op>
+            <div class="flex flex-column gap-3">
+                <button pButton class="p-button-text" label="Ir para preferências" icon="pi pi-check"></button>
+                <button pButton class="p-button-danger" label="Sair" icon="pi pi-sign-out"></button>
+            </div>
+        </p-overlayPanel>
+        <button (click)="op.toggle($event)" class="p-link layout-topbar-button">
             <i class="pi pi-user"></i>
             <span>Profile</span>
         </button>
-        <button class="p-link layout-topbar-button" [routerLink]="'/documentation'">
+        <button class="p-link layout-topbar-button" [routerLink]="'/pages/crud'">
             <i class="pi pi-cog"></i>
             <span>Settings</span>
         </button>
