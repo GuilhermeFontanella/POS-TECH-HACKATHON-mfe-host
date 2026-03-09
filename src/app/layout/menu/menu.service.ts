@@ -23,7 +23,7 @@ export class MenuService {
                     {
                         label: 'Preferências',
                         icon: 'pi pi-fw pi-user-edit',
-                        routerLink: ['/pages/crud']
+                        routerLink: ['/pages/settings']
                     },
                     {
                         label: 'Pomodoro',

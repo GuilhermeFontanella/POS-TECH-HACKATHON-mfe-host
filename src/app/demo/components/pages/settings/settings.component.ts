@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from 'primeng/api';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 
 @Component({
     selector: 'app-settings',
     template: `<mfe-settings></mfe-settings>`,
-    providers: [MessageService]
 })
-export class CrudComponent implements OnInit {
+export class SettingsComponent implements OnInit {
   async ngOnInit() {
     try {
       await loadRemoteModule({
