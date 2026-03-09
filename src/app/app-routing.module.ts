@@ -1,8 +1,6 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { NotfoundComponent } from './demo/components/notfound/notfound.component';
 import { AppLayoutComponent } from './layout/app.layout.component';
-import { authGuard } from './interceptors/auth-guard.interceptor';
 
 @NgModule({
     imports: [
@@ -15,6 +13,7 @@ import { authGuard } from './interceptors/auth-guard.interceptor';
                         {
                             path: '',
                             //canActivate: [authGuard],
+                            title: 'NeuroFlow - Tarefas',
                             loadChildren: () =>
                                 import(
                                     './demo/components/dashboard/dashboard.module'
@@ -29,7 +28,6 @@ import { authGuard } from './interceptors/auth-guard.interceptor';
                         }
                     ],
                 },
-                { path: 'pages/notfound', component: NotfoundComponent },
                 { path: '**', redirectTo: 'pages/notfound' },
             ],
             {
