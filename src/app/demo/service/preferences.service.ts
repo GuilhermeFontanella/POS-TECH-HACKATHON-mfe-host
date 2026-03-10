@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Firestore, collection, addDoc, doc, docData, updateDoc } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { MessageService } from 'primeng/api';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PreferencesService {
-    constructor(private firestore: AngularFirestore) {}
+    constructor(
+        private firestore: AngularFirestore,
+        //private messageService: MessageService
+    ) {}
 
     getSettings() {
         return this.firestore
@@ -20,6 +22,12 @@ export class PreferencesService {
         return this.firestore
         .collection('preferences')
         .doc('configs')
-        .update({ focusTime, pauseTime });
+        .update({ focusTime, pauseTime }).then(() => {
+            // this.messageService.add({
+            //     severity: 'success',
+            //     summary: 'Configuração atualizada',
+            //     detail: `Os dados foram gravados com sucesso.`,
+            // });
+        });
     }
 }

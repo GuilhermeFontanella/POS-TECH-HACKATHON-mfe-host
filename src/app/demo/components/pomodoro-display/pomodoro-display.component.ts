@@ -26,7 +26,6 @@ export class PomodoroDisplayComponent {
   }
 
   format(seconds: number | null) {
-    console.log(seconds)
     if (!seconds) return;
 
     const m = Math.floor(seconds / 60);

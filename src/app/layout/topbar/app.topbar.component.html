@@ -24,17 +24,17 @@
             <i class="pi pi-clock"></i>
             <span>Pomodoro</span>
         </button>
-        <p-overlayPanel #op>
+        <p-overlayPanel #user>
             <div class="flex flex-column gap-3">
-                <button pButton class="p-button-text" label="Ir para preferências" icon="pi pi-check"></button>
+                <button pButton class="p-button-text" label="Ir para preferências" icon="pi pi-check" (click)="goTo('/pages/settings')"></button>
                 <button pButton class="p-button-danger" label="Sair" icon="pi pi-sign-out"></button>
             </div>
         </p-overlayPanel>
-        <button (click)="op.toggle($event)" class="p-link layout-topbar-button">
+        <button (click)="user.toggle($event)" class="p-link layout-topbar-button">
             <i class="pi pi-user"></i>
             <span>Profile</span>
         </button>
-        <button class="p-link layout-topbar-button" [routerLink]="'/pages/crud'">
+        <button class="p-link layout-topbar-button" (click)="goTo('/pages/settings')">
             <i class="pi pi-cog"></i>
             <span>Settings</span>
         </button>
