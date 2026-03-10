@@ -46,4 +46,17 @@ export class SettingsService {
   setSummaryMode(value: boolean) {
     this.summaryMode$.next(value);
   }
+
+  initFromFirebase(settings: any) {
+    if (!settings) return;
+
+    this.setCognitiveAlert(settings.cognitiveAlert);
+    this.setComplexityInterface(settings.complexityInterface);
+    this.setDefaultMode(settings.defaultMode);
+    this.setFocusMode(settings.focusMode);
+    this.setDetailedMode(settings.detailedMode);
+    this.setFontSize(settings.fontSize);
+    this.setLineHeight(settings.lineHeight);
+    this.setSummaryMode(settings.summaryMode);
+  }
 }
